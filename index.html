@@ -17,19 +17,39 @@
 
     <main>
        
-            <button class="addBtn">+ Add book</button>
+            <button class="addBtn" id="addBtn">+ Add book</button>
         
         <div class="booksGrid">
+            <div class="book">
+                <p class="title">sdfs</p>
+                <p class="author">sdfs</p>
+                <p class="pages">sdfsd</p>
+                <button class="notRead">Not read</button>
+                <button class="remove">Remove</button>
+            </div>
             <div class="book"></div>
             <div class="book"></div>
             <div class="book"></div>
             <div class="book"></div>
             <div class="book"></div>
             <div class="book"></div>
-            <div class="book"></div>
-            
         </div>
     </main>
+
+    <div class="modal" id="modal">
+        <form class="addForm">
+            <h3>Add new book</h3>
+            <input class="formInputs" type="text" placeholder="Title">
+            <input class="formInputs" type="text" placeholder="Author">
+            <input class="formInputs" type="number" placeholder="Pages">
+            <label for="check"> Have you read it? 
+                <input type="checkbox">
+            </label>
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
 
     <footer>Copyright © 2022 hema <i class="fa fa-github"></i></footer>
 </body>

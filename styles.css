@@ -1,0 +1,50 @@
+html, body  {
+    height:100%;
+   width:100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #fff;
+    height: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 400px;
+}
+main {
+    flex: auto;
+    background-color: #eee;
+
+}
+
+
+footer {
+    height: 25px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.4rem;
+}
+
+.addBtn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 800;
+    cursor: pointer;
+}

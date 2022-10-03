@@ -1,8 +1,10 @@
-html, body  {
-    height:100%;
-   width:100%;
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
 }
+
+
 
 body {
     display: flex;
@@ -11,21 +13,26 @@ body {
 
 header {
     background-color: #fff;
-    height: 75px;
+    height: 13vh;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 400px;
 }
 main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     flex: auto;
     background-color: #eee;
-
+    justify-content: center;
+    align-items: center;
 }
 
 
 footer {
-    height: 25px;
+    height: 35px;
     background-color: #eee;
     display: flex;
     justify-content: center;
@@ -33,12 +40,7 @@ footer {
     gap: 8px;
 }
 
-.buttonDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 3.4rem;
-}
+
 
 .addBtn {
     background-color: transparent;
@@ -47,4 +49,30 @@ footer {
     font-size: 1.4rem;
     font-weight: 800;
     cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+.booksGrid {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px 10px;
+}
+
+.book {
+    height: 20rem;
+    width: 50%;
+    background-color: #444;
+}
+.book:nth-child(3n) {
+    place-self: start;
+}
+.book:nth-child(3n + 4),
+.book:nth-child(1){
+    place-self: end;
 }

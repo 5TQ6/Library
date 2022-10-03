@@ -1,3 +1,9 @@
+:root {
+    --shadow: rgb(230, 230, 225);
+    --light-red: #ff9c9c;
+    --light-green: #9fff9c
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     padding: 0;
@@ -12,6 +18,8 @@ body {
 }
 
 header {
+    font-family: Arial, Helvetica, sans-serifasd;
+    font-weight: 900;
     background-color: #fff;
     height: 13vh;
     width: 100vw;
@@ -21,6 +29,7 @@ header {
     gap: 400px;
 }
 main {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -33,6 +42,7 @@ main {
 
 footer {
     height: 35px;
+    font-size: 1.3rem;
     background-color: #eee;
     display: flex;
     justify-content: center;
@@ -44,12 +54,16 @@ footer {
 
 .addBtn {
     background-color: transparent;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     outline: none;
     border: none;
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 9rem;
+    height: 3rem;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 
@@ -65,14 +79,104 @@ footer {
 }
 
 .book {
-    height: 20rem;
-    width: 50%;
-    background-color: #444;
+    height: 17rem;
+    width: 60%;
+    background-color: #fff;
+    border-radius: 7%;
+    box-shadow: 5px 7px 2px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
+
+.book button,
+.addForm button {
+    width: 90%;
+    height: 15%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 3px 2px var(--shadow);
+}
+
+.notRead {
+    background-color: var(--light-red);
+}
+
+.read {
+    background-color: var(--light-green);
+}
+
 .book:nth-child(3n) {
     place-self: start;
 }
+
 .book:nth-child(3n + 4),
 .book:nth-child(1){
     place-self: end;
+}
+
+.addBtn:hover {
+    background-color: #ccc;
+}
+
+.modal {
+    height: 350px;
+    width: 300px;
+    position: fixed;
+    background-color: #eee;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1;
+    transition: 0.2s ease-in-out;
+}
+.addForm {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+
+.formInputs{
+    border: none;
+    height: 10%;
+    width: 90%;
+    border-radius: 5px;
+    padding: 10px;
+}
+.addForm label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.addForm button {
+    background-color: var(--light-green);
+    box-shadow: none;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0 , 0, 0, 0.5);
+    display: none;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.overlay.active {
+    display: block;
 }

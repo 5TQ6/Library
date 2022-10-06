@@ -20,32 +20,21 @@
             <button class="addBtn" id="addBtn">+ Add book</button>
         
         <div class="booksGrid">
-            <div class="book">
-                <p class="title">sdfs</p>
-                <p class="author">sdfs</p>
-                <p class="pages">sdfsd</p>
-                <button class="notRead">Not read</button>
-                <button class="remove">Remove</button>
-            </div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
+            
+            
         </div>
     </main>
 
     <div class="modal" id="modal">
-        <form class="addForm">
+        <form class="addForm" onsubmit="renderBooks()">
             <h3>Add new book</h3>
-            <input class="formInputs" type="text" placeholder="Title">
-            <input class="formInputs" type="text" placeholder="Author">
-            <input class="formInputs" type="number" placeholder="Pages">
-            <label for="check"> Have you read it? 
-                <input type="checkbox">
+            <input class="formInputs" id="title" type="text" placeholder="Title" data-title="">
+            <input class="formInputs" id="author" type="text" placeholder="Author" data-author="">
+            <input class="formInputs" id="pages" type="number" placeholder="Pages" data-pages="">
+            <label for="check" > Have you read it? 
+                <input id="read" type="checkbox" data-read="">
             </label>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
 

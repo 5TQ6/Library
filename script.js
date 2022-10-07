@@ -38,6 +38,11 @@ function addBookToLibrary() {
     
 }
 
+function deleteBook(index) {
+    myLibrary.splice(index,1)
+    renderBooks();
+}
+
 function createBookElement(el, content, className) {
     const element = document.createElement(el);
     element.textContent = content;
@@ -66,10 +71,15 @@ function createBookItem(book, index) {
         createBookElement('button', 'Remove', "remove")
     )
     
+    bookItem.querySelector('.remove').addEventListener('click', () => {
+        deleteBook(index);
+    })
+
     books.insertAdjacentElement('afterbegin', bookItem);
 }
 
 function renderBooks() {
+    books.textContent = ""
     myLibrary.map( (book,index) => {
         createBookItem(book,index)
     } )
